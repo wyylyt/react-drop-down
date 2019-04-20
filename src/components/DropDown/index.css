@@ -1,0 +1,151 @@
+*{
+    box-sizing: border-box;
+}
+.hide{
+    display: none !important;
+}
+.container{
+    width: 100%;
+    height: 36px;
+    position: relative;
+}
+.container .delIcon{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    z-index: 999;
+    top: 10px;
+    right: 46px; 
+    background-image: url(./img/delIcon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.drop-input{
+    width: calc(100% - 40px);
+    height: 100%;
+    float: left;
+    font-family: "Microsoft Yahei",微软雅黑!important;
+    list-style: none;
+    padding: 6px 11px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #717171;
+    background-color: #fafafa;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    transition: all .3s;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.drop-input:disabled{
+    cursor:auto;
+    background-color: #eee;
+}
+.drop-input:hover {
+    border-color: #40a9ff;
+}
+.drop-input.drop-input-notmatch{
+    background-color: rgba(255,0,0,.1)
+}
+.drop-arrow{
+    width: 40px;
+    height: 100%;
+    float: left;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 3px;
+    user-select: none;
+    color: #717171;
+    border: 1px solid #ccc;
+    padding: 7px 12px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-left: none;
+    transition: all .3s;
+}
+.drop-arrow:hover{
+    color: #000;
+}
+.drop-arrow:active,.drop-arrow:focus{
+    border-color: #40a9ff;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+.drop-arrow .caret{
+    margin: 0 2px 2px 3px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+@keyframes rotation{from{transform:rotate(0)}
+    to{transform:rotate(360deg)}
+}
+.drop-arrow .loading-state{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    transform: rotate(360deg);
+    animation: rotation 1s linear infinite;
+    background: url(./img/loading.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    top: 3px;
+    position: relative;
+}
+.drop-box{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    padding: 6px;
+    padding-top: 0;
+    list-style: none;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    background-clip: padding-box;
+    width: 100%;
+    background-color: #F6F6F6;
+    border-color: #CACFD2;
+    max-height: 275px;
+    overflow: auto;
+    display: none;
+}
+.drop-box.active{
+    display: block;
+}
+.drop-box .drop-menu .drop-item{
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    color: #5D5F63;
+    user-select: none;
+}
+.drop-box .drop-menu .drop-item:hover{
+    background-color: #40a9ff;
+    color: #fff;
+}
+.drop-box .drop-menu .drop-item.drop-item-select{
+    background: #ecf6fd;
+    color: #108ee9;
+}
+input::placeholder{
+    color: #999999;
+}
