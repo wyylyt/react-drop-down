@@ -1,23 +1,25 @@
-const path = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
+// const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './index.js',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, '../dist'),
-  },
+  devtool: 'eval-source-map',
+  entry: './examples/videostatus/index.js',
+  // output: {
+  //   filename: 'bundle.js',
+  //   path: path.resolve(__dirname, '../dist'),
+  // },
   module: {
     rules: [
       {
         test: /\.js$/,
         use: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -25,7 +27,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name:'img/[name][hash:8].[ext]'
+              name: 'img/[name][hash:8].[ext]',
             },
           },
         ],
@@ -44,11 +46,13 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: './dist'
+    // contentBase: './dist',
   },
+  // autoOpenBroswer: true,
   plugins: [
-    new htmlWebpackPlugin({
-      template: './index.html'
-    })
+    new HtmlWebpackPlugin({
+      template: './index.html',
+    }),
+    new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
   ],
 };

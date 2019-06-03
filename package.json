@@ -1,7 +1,7 @@
 {
-  "name": "react-drop-down-zw",
-  "version": "0.1.20",
-  "description": "dropMenu for zw",
+  "name": "react-video-status-zw",
+  "version": "0.1.0",
+  "description": "a video timing control component for zw's object",
   "main": "./dist/bundle.js",
   "private": false,
   "author": "wanjikun <1368767001@@qq.com>",
@@ -16,6 +16,7 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
+    "open-browser-webpack-plugin": "0.0.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
@@ -33,6 +34,12 @@
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "eslint": "^5.1.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
+    "babel-eslint": "^8.2.6"
   }
 }
